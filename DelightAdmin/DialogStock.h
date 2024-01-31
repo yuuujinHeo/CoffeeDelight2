@@ -61,6 +61,8 @@ public:
     QMap<QString, ST_MENU>  menu;
     QMap<QString, V_RECIPE> recipe;
 
+    int ice_rotate_1;
+    int ice_rotate_2;
 
     int ApproximateWaitingTime;
 
@@ -120,14 +122,34 @@ private slots:
     void on_BTN_DB_RELOAD_clicked();
 
     void on_BTN_MILK_USE_clicked();
+    void on_BTN_MILK_NOUSE_clicked();
+    void on_BTN_COFFEE_USE_clicked();
+    void on_BTN_COFFEE_NOUSE_clicked();
+    void on_BTN_SODA1_USE_clicked();
+    void on_BTN_SODA1_NOUSE_clicked();
+    void on_BTN_SODA2_USE_clicked();
+    void on_BTN_SODA2_NOUSE_clicked();
+    void on_BTN_ICE1_USE_clicked();
+    void on_BTN_ICE1_NOUSE_clicked();
+    void on_BTN_ICE2_USE_clicked();
+    void on_BTN_ICE2_NOUSE_clicked();
+    void on_BTN_HOT1_USE_clicked();
+    void on_BTN_HOT1_NOUSE_clicked();
+    void on_BTN_HOT2_USE_clicked();
+    void on_BTN_HOT2_NOUSE_clicked();
 
-    void on_BTN_MILK_NO_USE_clicked();
+//    void on_BTN_MILK_NO_USE_clicked();
 
-    void on_PB_SAUCE_5_valueChanged(int value);
+//    void on_PB_SAUCE_5_valueChanged(int value);
 
     void on_BTN_ENABLE_MILK_clicked();
 
     void on_BTN_ENABLE_ICE_1_clicked();
+
+    void on_BTN_CUP_NOUSE_1_clicked();
+    void on_BTN_CUP_NOUSE_2_clicked();
+    void on_BTN_CUP_NOUSE_3_clicked();
+    void on_BTN_CUP_NOUSE_4_clicked();
 
     void on_BTN_ENABLE_ICE_2_clicked();
 
@@ -140,6 +162,16 @@ private slots:
     void on_BTN_ENABLE_SODA_1_clicked();
 
     void on_BTN_ENABLE_SODA_2_clicked();
+
+    void on_BTN_ICE_ROTATE_clicked();
+    void on_BTN_SAUCE_NOUSE_1_clicked();
+    void on_BTN_SAUCE_NOUSE_2_clicked();
+    void on_BTN_SAUCE_NOUSE_3_clicked();
+    void on_BTN_SAUCE_NOUSE_4_clicked();
+    void on_BTN_SAUCE_NOUSE_5_clicked();
+    void on_BTN_SAUCE_NOUSE_6_clicked();
+    void on_BTN_SAUCE_NOUSE_7_clicked();
+    void on_BTN_SAUCE_NOUSE_8_clicked();
 
 private:
     Ui::DialogStock *ui;

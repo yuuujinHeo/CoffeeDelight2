@@ -165,6 +165,8 @@ public:
     // 청소 상태 변수
     int cleaning_state = CLEANING_NONE;
 
+    int timeout_after_clean = 0;
+
     // 기기 상태 변수
     Machine_Status Machine;
 

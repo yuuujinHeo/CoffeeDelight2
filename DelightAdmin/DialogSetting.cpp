@@ -85,18 +85,29 @@ void DialogSetting::onTimer(){
         SetLEColor(ui->LE_DEVICE_ERROR_PET_CUP_2, COLOR_GOOD);
     }
 
-    if(stock->IsDeviceError("HOT_WATER")){
-        SetLEColor(ui->LE_DEVICE_ERROR_HOT_WATER, COLOR_BAD);
+    if(stock->IsDeviceError("HOT_1")){
+        SetLEColor(ui->LE_DEVICE_ERROR_HOT_1, COLOR_BAD);
     }else{
-        SetLEColor(ui->LE_DEVICE_ERROR_HOT_WATER, COLOR_GOOD);
+        SetLEColor(ui->LE_DEVICE_ERROR_HOT_1, COLOR_GOOD);
     }
 
-    if(stock->IsDeviceError("SODA")){
-        SetLEColor(ui->LE_DEVICE_ERROR_SODA, COLOR_BAD);
+    if(stock->IsDeviceError("HOT_2")){
+        SetLEColor(ui->LE_DEVICE_ERROR_HOT_2, COLOR_BAD);
     }else{
-        SetLEColor(ui->LE_DEVICE_ERROR_SODA, COLOR_GOOD);
+        SetLEColor(ui->LE_DEVICE_ERROR_HOT_2, COLOR_GOOD);
     }
 
+    if(stock->IsDeviceError("SODA_1")){
+        SetLEColor(ui->LE_DEVICE_ERROR_SODA_1, COLOR_BAD);
+    }else{
+        SetLEColor(ui->LE_DEVICE_ERROR_SODA_1, COLOR_GOOD);
+    }
+
+    if(stock->IsDeviceError("SODA_2")){
+        SetLEColor(ui->LE_DEVICE_ERROR_SODA_2, COLOR_BAD);
+    }else{
+        SetLEColor(ui->LE_DEVICE_ERROR_SODA_2, COLOR_GOOD);
+    }
 
     if(SUPER_FATAL_ERROR_PLATFORM_OPEN == 1){
         SetLEColor(ui->LE_SUPER_STOP_PLATFORM_OPEN, COLOR_BAD);
@@ -181,15 +192,23 @@ void DialogSetting::on_BTN_ERROR_CLEAR_PET_CUP_2_clicked(){
     stock->ClearDeviceError("PET_CUP_2");
     plog->write("[UI OPERATION - SETTING] Error Clear PET_CUP_2");
 }
-void DialogSetting::on_BTN_ERROR_CLEAR_HOT_WATER_clicked(){
-    stock->ClearDeviceError("HOT_WATER");
-    plog->write("[UI OPERATION - SETTING] Error Clear HOT_WATER");
+void DialogSetting::on_BTN_ERROR_CLEAR_HOT_1_clicked(){
+    stock->ClearDeviceError("HOT_1");
+    plog->write("[UI OPERATION - SETTING] Error Clear HOT_1");
 }
-void DialogSetting::on_BTN_ERROR_CLEAR_SODA_clicked(){
-    stock->ClearDeviceError("SODA");
-    plog->write("[UI OPERATION - SETTING] Error Clear SODA");
+void DialogSetting::on_BTN_ERROR_CLEAR_HOT_2_clicked(){
+    stock->ClearDeviceError("HOT_2");
+    plog->write("[UI OPERATION - SETTING] Error Clear HOT_2");
+}
+void DialogSetting::on_BTN_ERROR_CLEAR_SODA_1_clicked(){
+    stock->ClearDeviceError("SODA_1");
+    plog->write("[UI OPERATION - SETTING] Error Clear SODA_1");
 }
 
+void DialogSetting::on_BTN_ERROR_CLEAR_SODA_2_clicked(){
+    stock->ClearDeviceError("SODA_2");
+    plog->write("[UI OPERATION - SETTING] Error Clear SODA_2");
+}
 void DialogSetting::on_BTN_DB_RELOAD_clicked()
 {
 

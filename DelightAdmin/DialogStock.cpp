@@ -80,6 +80,19 @@ void DialogStock::LoadDatabase(){
         }
     }
 
+    ice_rotate_1 = 10;
+    ice_rotate_2 = 10;
+    if(query.exec("SELECT * FROM Table_Option")){
+        while(query.next()){
+            if(query.value("Ingredient").toString() == "ICE_1"){
+                ice_rotate_1 = query.value("Option").toInt();
+            }else if(query.value("Ingredient").toString() == "ICE_2"){
+                ice_rotate_2 = query.value("Option").toInt();
+            }
+        }
+    }
+
+
     if(query.exec("SELECT * FROM Table_Coffee")){
         coffee_key_btn.clear();
         coffee_desc_btn.clear();
@@ -169,42 +182,20 @@ void DialogStock::SetUIForm(){
 
     // ---------------------
 
-
-
-
-
-    // ---------------------
+    ui->LB_MILK->setText(stock["MILK"].name);
     ui->LB_ICE_1->setText(stock["ICE_1"].name);
+
     ui->LB_ICE_2->setText(stock["ICE_2"].name);
     ui->LB_HOT_1->setText(stock["HOT_1"].name);
     ui->LB_HOT_2->setText(stock["HOT_2"].name);
+
     ui->LB_SODA_1->setText(stock["SODA_1"].name);
     ui->LB_SODA_2->setText(stock["SODA_2"].name);
     ui->LB_COFFEE->setText(stock["COFFEE"].name);
-    ui->LB_MILK->setText(stock["MILK"].name);
-    ui->PB_ICE_1->setMaximum(1);
-    ui->PB_ICE_2->setMaximum(1);
-    ui->PB_HOT_1->setMaximum(1);
-    ui->PB_HOT_2->setMaximum(1);
-    ui->PB_SODA_1->setMaximum(1);
-    ui->PB_SODA_2->setMaximum(1);
-    ui->PB_COFFEE->setMaximum(1);
-    ui->PB_MILK->setMaximum(1);
 
+    ui->LE_ICE_ROTATE_1->setText(QString::number(ice_rotate_1));
+    ui->LE_ICE_ROTATE_2->setText(QString::number(ice_rotate_2));
 
-    // ---------------------------
-    ui->CB_STOCK_NAME->addItem("PAPER_CUP_1");
-    ui->CB_STOCK_NAME->addItem("PAPER_CUP_2");
-    ui->CB_STOCK_NAME->addItem("PET_CUP_1");
-    ui->CB_STOCK_NAME->addItem("PET_CUP_2");
-    ui->CB_STOCK_NAME->addItem("SAUCE_1");
-    ui->CB_STOCK_NAME->addItem("SAUCE_2");
-    ui->CB_STOCK_NAME->addItem("SAUCE_3");
-    ui->CB_STOCK_NAME->addItem("SAUCE_4");
-    ui->CB_STOCK_NAME->addItem("SAUCE_5");
-    ui->CB_STOCK_NAME->addItem("SAUCE_6");
-    ui->CB_STOCK_NAME->addItem("SAUCE_7");
-    ui->CB_STOCK_NAME->addItem("SAUCE_8");
 }
 
 void DialogStock::UpdateUI(){
@@ -247,116 +238,105 @@ void DialogStock::UpdateUI(){
 
 
     //------------------------
-    if(stock["ICE_1"].error == 1){
-        ui->PB_ICE_1->setValue(0);
-    }else{
-        ui->PB_ICE_1->setValue(1);
-    }
-
-    if(stock["ICE_2"].error == 1){
-        ui->PB_ICE_2->setValue(0);
-    }else{
-        ui->PB_ICE_2->setValue(1);
-    }
-
-    if(stock["HOT_1"].error == 1){
-        ui->PB_HOT_1->setValue(0);
-    }else{
-        ui->PB_HOT_1->setValue(1);
-    }
-
-    if(stock["HOT_2"].error == 1){
-        ui->PB_HOT_2->setValue(0);
-    }else{
-        ui->PB_HOT_2->setValue(1);
-    }
-
-    if(stock["SODA_1"].error == 1){
-        ui->PB_SODA_1->setValue(0);
-    }else{
-        ui->PB_SODA_1->setValue(1);
-    }
-
-    if(stock["SODA_2"].error == 1){
-        ui->PB_SODA_2->setValue(0);
-    }else{
-        ui->PB_SODA_2->setValue(1);
-    }
-
-    if(stock["COFFEE"].error == 1){
-        ui->PB_COFFEE->setValue(0);
-        ui->PB_MILK->setValue(0);
-    }else{
-        ui->PB_COFFEE->setValue(1);
-        ui->PB_MILK->setValue(1);
-    }
 //    ui->PB_MILK->setValue(stock["MILK"].current);
 //    ui->PB_MILK->setFormat(QString().sprintf("%d / %d", stock["MILK"].current, stock["MILK"].maximum));
 
 
 
-    if(MILK_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_MILK, COLOR_BAD);
-        ui->BTN_ENABLE_MILK->setText("사용안함");
+    if(MILK_DISABLE == 1 || stock["MILK"].current == 0){
+        SetBTNColor(ui->BTN_MILK_NOUSE,"red");
+        SetBTNColor(ui->BTN_MILK_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_MILK, COLOR_GOOD);
-        ui->BTN_ENABLE_MILK->setText("사용중");
+        if(stock["MILK"].error == 1 || stock["COFFEE"].error == 1){
+            SetBTNColor(ui->BTN_MILK_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_MILK_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_MILK_NOUSE,"#dddddd");
     }
 
-    if(ICE_1_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_ICE_1, COLOR_BAD);
-        ui->BTN_ENABLE_ICE_1->setText("사용안함");
+    if(ICE_1_DISABLE == 1 || stock["ICE_1"].current == 0){
+        SetBTNColor(ui->BTN_ICE1_NOUSE,"red");
+        SetBTNColor(ui->BTN_ICE1_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_ICE_1, COLOR_GOOD);
-        ui->BTN_ENABLE_ICE_1->setText("사용중");
+        if(stock["ICE_1"].error == 1){
+            SetBTNColor(ui->BTN_ICE1_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_ICE1_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_ICE1_NOUSE,"#dddddd");
     }
 
-    if(ICE_2_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_ICE_2, COLOR_BAD);
-        ui->BTN_ENABLE_ICE_2->setText("사용안함");
+    if(ICE_2_DISABLE == 1 || stock["ICE_2"].current == 0){
+        SetBTNColor(ui->BTN_ICE2_NOUSE,"red");
+        SetBTNColor(ui->BTN_ICE2_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_ICE_2, COLOR_GOOD);
-        ui->BTN_ENABLE_ICE_2->setText("사용중");
+        if(stock["ICE_2"].error == 1){
+            SetBTNColor(ui->BTN_ICE2_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_ICE2_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_ICE2_NOUSE,"#dddddd");
     }
 
-    if(HOT_1_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_HOT_1, COLOR_BAD);
-        ui->BTN_ENABLE_HOT_1->setText("사용안함");
+    if(HOT_1_DISABLE == 1 || stock["HOT_1"].current == 0){
+        SetBTNColor(ui->BTN_HOT1_NOUSE,"red");
+        SetBTNColor(ui->BTN_HOT1_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_HOT_1, COLOR_GOOD);
-        ui->BTN_ENABLE_HOT_1->setText("사용중");
+        if(stock["HOT_1"].error == 1){
+            SetBTNColor(ui->BTN_HOT1_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_HOT1_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_HOT1_NOUSE,"#dddddd");
     }
 
-    if(HOT_2_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_HOT_2, COLOR_BAD);
-        ui->BTN_ENABLE_HOT_2->setText("사용안함");
+    if(HOT_2_DISABLE == 1 || stock["HOT_2"].current == 0){
+        SetBTNColor(ui->BTN_HOT2_NOUSE,"red");
+        SetBTNColor(ui->BTN_HOT2_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_HOT_2, COLOR_GOOD);
-        ui->BTN_ENABLE_HOT_2->setText("사용중");
+        if(stock["HOT_2"].error == 1){
+            SetBTNColor(ui->BTN_HOT2_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_HOT2_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_HOT2_NOUSE,"#dddddd");
     }
 
-    if(SODA_1_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_SODA_1, COLOR_BAD);
-        ui->BTN_ENABLE_SODA_1->setText("사용안함");
+    if(SODA_1_DISABLE == 1 || stock["SODA_1"].current == 0){
+        SetBTNColor(ui->BTN_SODA1_NOUSE,"red");
+        SetBTNColor(ui->BTN_SODA1_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_SODA_1, COLOR_GOOD);
-        ui->BTN_ENABLE_SODA_1->setText("사용중");
+        if(stock["SODA_1"].error == 1){
+            SetBTNColor(ui->BTN_SODA1_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_SODA1_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_SODA1_NOUSE,"#dddddd");
     }
 
-    if(SODA_2_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_SODA_2, COLOR_BAD);
-        ui->BTN_ENABLE_SODA_2->setText("사용안함");
+    if(SODA_2_DISABLE == 1 || stock["SODA_2"].current == 0){
+        SetBTNColor(ui->BTN_SODA2_NOUSE,"red");
+        SetBTNColor(ui->BTN_SODA2_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_SODA_2, COLOR_GOOD);
-        ui->BTN_ENABLE_SODA_2->setText("사용중");
+        if(stock["SODA_2"].error == 1){
+            SetBTNColor(ui->BTN_SODA2_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_SODA2_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_SODA2_NOUSE,"#dddddd");
     }
 
-    if(COFFEE_DISABLE == 1){
-        SetBTNColor(ui->BTN_ENABLE_COFFEE, COLOR_BAD);
-        ui->BTN_ENABLE_COFFEE->setText("사용안함");
+    if(COFFEE_DISABLE == 1 || stock["COFFEE"].current == 0){
+        SetBTNColor(ui->BTN_COFFEE_NOUSE,"red");
+        SetBTNColor(ui->BTN_COFFEE_USE,"#dddddd");
     }else{
-        SetBTNColor(ui->BTN_ENABLE_COFFEE, COLOR_GOOD);
-        ui->BTN_ENABLE_COFFEE->setText("사용중");
+        if(stock["COFFEE"].error == 1){
+            SetBTNColor(ui->BTN_COFFEE_USE,"red");
+        }else{
+            SetBTNColor(ui->BTN_COFFEE_USE,"#12d27c");
+        }
+        SetBTNColor(ui->BTN_COFFEE_NOUSE,"#dddddd");
     }
 }
 
@@ -432,8 +412,8 @@ void DialogStock::UpdateStockReserved(){
                 stock["PAPER_CUP_1"].reserved += 1;
             }else if(ingredient == "PET_CUP"){
                 stock["PET_CUP_1"].reserved += 1;
-            }else if(ingredient == "ICE_1" || ingredient == "ICE_2" ||
-                     ingredient == "HOT_WATER" || ingredient == "SODA" ||
+            }else if(ingredient.left(3) == "ICE" ||
+                     ingredient.left(3) == "HOT" || ingredient.left(4) == "SODA" ||
                      ingredient == "COFFEE"){
                 ;
             }else{
@@ -499,30 +479,70 @@ void DialogStock::UpdateMenuAvailable(){
                     break;
                 }
             }else if(ingredient == "MILK"){
-                if(MILK_DISABLE == true || stock["COFFEE"].error == 1){
+                int cur_stock = stock["MILK"].current - stock["MILK"].minimum;
+                int reserved = stock["MILK"].reserved;
+                if(cur_stock-reserved < MILK_APPROXIMATION_USE_AMOUNT){ // approximation
                     available = false;
                     break;
                 }
-            }else if(ingredient == "ICE_1" || ingredient == "ICE_2"){
-                if((ICE_1_DISABLE == true || stock["ICE_1"].error == 1) &&
-                    (ICE_2_DISABLE == true || stock["ICE_2"].error == 1)){
+                if(stock["COFFEE"].error == 1 || stock["MILK"].error == 1){
                     available = false;
                     break;
                 }
-            }else if(ingredient == "HOT_WATER"){
-                if((HOT_1_DISABLE == true || stock["HOT_1"].error == 1) &&
-                    (HOT_2_DISABLE == true || stock["HOT_2"].error == 1)){
+                if(stock["MILK"].current == 0){
                     available = false;
                     break;
                 }
-            }else if(ingredient == "SODA"){
-                if((SODA_1_DISABLE == true || stock["SODA_1"].error == 1) &&
-                    (SODA_2_DISABLE == true || stock["SODA_2"].error == 1)){
+            }else if(ingredient.left(3) == "ICE"){
+                if(stock["ICE_1"].error == 1 && stock["ICE_2"].error == 1){
+                    available = false;
+                    break;
+                }
+                if(stock["ICE_1"].current == 0 && stock["ICE_2"].current == 0){
+                    available = false;
+                    break;
+                }
+            }else if(ingredient.left(3) == "HOT"){
+                if(stock["HOT_1"].error == 1 && stock["HOT_2"].error == 1){
+                    available = false;
+                    break;
+                }
+                if(stock["HOT_1"].current == 0 && stock["HOT_2"].current == 0){
+                    available = false;
+                    break;
+                }
+            }else if(ingredient.left(4) == "SODA"){
+                if(stock["SODA_1"].error == 1 && stock["SODA_2"].error == 1){
+                    available = false;
+                    break;
+                }
+                if(stock["SODA_1"].current == 0 && stock["SODA_2"].current == 0){
                     available = false;
                     break;
                 }
             }else if(ingredient == "COFFEE"){
-                if(COFFEE_DISABLE == true || stock["COFFEE"].error == 1){
+                if(amount == "ESP"){
+                    if(stock["COFFEE"].error == 1 || stock["COFFEE"].current == 0){
+                        available = false;
+                        break;
+                    }
+                }else if(amount == "LAH1" || amount == "LAH2" || amount == "CPH" || amount == "LAI" || amount == "CPI"){
+
+                    if(stock["COFFEE"].error == 1 || stock["COFFEE"].current == 0){
+                        available = false;
+                        break;
+                    }
+                    if(stock["MILK"].error == 1 || stock["MILK"].current == 0){
+                        available = false;
+                        break;
+                    }
+                }else if(amount == "MFH" || amount == "MFI"){
+
+                    if(stock["COFFEE"].error == 1  || stock["MILK"].error == 1 || stock["MILK"].current == 0){
+                        available = false;
+                        break;
+                    }
+                }else{
                     available = false;
                     break;
                 }
@@ -565,7 +585,7 @@ void DialogStock::on_BTN_SAUCE_REPLACE_10_clicked(){ FillFull("SAUCE_10"); }
 
 
 void DialogStock::on_BTN_SET_STOCK_MANUAL_clicked(){
-    SetStock(ui->CB_STOCK_NAME->currentText(), ui->LE_MANUAL_STOCK_AMOUNT->text().toInt());
+//    SetStock(ui->CB_STOCK_NAME->currentText(), ui->LE_MANUAL_STOCK_AMOUNT->text().toInt());
 }
 
 bool DialogStock::IsMenuOptionAvailable(QString menu_id){
@@ -578,18 +598,74 @@ void DialogStock::on_BTN_DB_RELOAD_clicked()
 }
 void DialogStock::on_BTN_MILK_USE_clicked()
 {
-    SetStock("MILK",20000);
+    SetStock("MILK",1);
 }
 
-void DialogStock::on_BTN_MILK_NO_USE_clicked()
+void DialogStock::on_BTN_MILK_NOUSE_clicked()
 {
     SetStock("MILK",0);
 }
 
-void DialogStock::on_PB_SAUCE_5_valueChanged(int value)
-{
-
+void DialogStock::on_BTN_COFFEE_USE_clicked(){
+    SetStock("COFFEE",1);
 }
+void DialogStock::on_BTN_COFFEE_NOUSE_clicked(){
+    SetStock("COFFEE",0);
+}
+void DialogStock::on_BTN_SODA1_USE_clicked(){
+    SetStock("SODA_1",1);
+}
+void DialogStock::on_BTN_SODA1_NOUSE_clicked(){
+    SetStock("SODA_1",0);
+}
+void DialogStock::on_BTN_SODA2_USE_clicked(){
+    SetStock("SODA_2",1);
+}
+void DialogStock::on_BTN_SODA2_NOUSE_clicked(){
+    SetStock("SODA_2",0);
+}
+void DialogStock::on_BTN_ICE1_USE_clicked(){
+    SetStock("ICE_1",1);
+}
+void DialogStock::on_BTN_ICE1_NOUSE_clicked(){
+    SetStock("ICE_1",0);
+}
+void DialogStock::on_BTN_ICE2_USE_clicked(){
+    SetStock("ICE_2",1);
+}
+void DialogStock::on_BTN_ICE2_NOUSE_clicked(){
+    SetStock("ICE_2",0);
+}
+void DialogStock::on_BTN_HOT1_USE_clicked(){
+    SetStock("HOT_1",1);
+}
+void DialogStock::on_BTN_HOT1_NOUSE_clicked(){
+    SetStock("HOT_1",0);
+}
+void DialogStock::on_BTN_HOT2_USE_clicked(){
+    SetStock("HOT_2",1);
+}
+void DialogStock::on_BTN_HOT2_NOUSE_clicked(){
+    SetStock("HOT_2",0);
+}
+
+void DialogStock::on_BTN_CUP_NOUSE_1_clicked()
+{
+    SetStock("PAPER_CUP_1",0);
+}
+void DialogStock::on_BTN_CUP_NOUSE_2_clicked()
+{
+    SetStock("PAPER_CUP_2",0);
+}
+void DialogStock::on_BTN_CUP_NOUSE_3_clicked()
+{
+    SetStock("PET_CUP_1",0);
+}
+void DialogStock::on_BTN_CUP_NOUSE_4_clicked()
+{
+    SetStock("PET_CUP_2",0);
+}
+
 
 void DialogStock::on_BTN_ENABLE_MILK_clicked()
 {
@@ -823,3 +899,52 @@ void DialogStock::on_BTN_ENABLE_COFFEE_clicked()
     }
 }
 
+void DialogStock::on_BTN_ICE_ROTATE_clicked()
+{
+    QSqlQuery query(db);
+    ice_rotate_1 = ui->LE_ICE_ROTATE_1->text().toInt();
+    ice_rotate_2 = ui->LE_ICE_ROTATE_2->text().toInt();
+    QString update_str = QString().sprintf("UPDATE Table_Option SET Option = %d WHERE Ingredient = \'ICE_1\'", ice_rotate_1);
+    query.exec(update_str);
+    update_str = QString().sprintf("UPDATE Table_Option SET Option = %d WHERE Ingredient = \'ICE_2\'", ice_rotate_2);
+    query.exec(update_str);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_1_clicked()
+{
+    SetStock("SAUCE_1",0);
+}
+void DialogStock::on_BTN_SAUCE_NOUSE_2_clicked()
+{
+    SetStock("SAUCE_2",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_3_clicked()
+{
+    SetStock("SAUCE_3",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_4_clicked()
+{
+    SetStock("SAUCE_4",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_5_clicked()
+{
+    SetStock("SAUCE_5",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_6_clicked()
+{
+    SetStock("SAUCE_6",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_7_clicked()
+{
+    SetStock("SAUCE_7",0);
+}
+
+void DialogStock::on_BTN_SAUCE_NOUSE_8_clicked()
+{
+    SetStock("SAUCE_8",0);
+}

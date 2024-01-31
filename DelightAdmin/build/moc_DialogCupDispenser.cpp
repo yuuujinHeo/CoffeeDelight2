@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'DialogCupDispenser.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.8)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../DialogCupDispenser.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'DialogCupDispenser.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.12.8. It"
+#error "This file was generated using the moc from 5.15.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -82,7 +83,7 @@ void DialogCupDispenser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<DialogCupDispenser *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         switch (_id) {
         case 0: _t->onTimer(); break;
         case 1: _t->on_BTN_CUP_DISPENSE_1_clicked(); break;
@@ -92,11 +93,11 @@ void DialogCupDispenser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         default: ;
         }
     }
-    Q_UNUSED(_a);
+    (void)_a;
 }
 
 QT_INIT_METAOBJECT const QMetaObject DialogCupDispenser::staticMetaObject = { {
-    &QDialog::staticMetaObject,
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
     qt_meta_stringdata_DialogCupDispenser.data,
     qt_meta_data_DialogCupDispenser,
     qt_static_metacall,

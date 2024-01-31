@@ -604,6 +604,7 @@ void MainWindow::CoreLogic_Operating(){
         }
 
 
+
         // Super Operating Stop Command
         if(OP_COMMAND_SUPER_STOP_OPERATING == 1){
             // block the order

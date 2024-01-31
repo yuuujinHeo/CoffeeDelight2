@@ -56,9 +56,12 @@ private slots:
 
     void on_BTN_ERROR_CLEAR_PET_CUP_2_clicked();
 
-    void on_BTN_ERROR_CLEAR_HOT_WATER_clicked();
+    void on_BTN_ERROR_CLEAR_HOT_1_clicked();
 
-    void on_BTN_ERROR_CLEAR_SODA_clicked();
+    void on_BTN_ERROR_CLEAR_SODA_1_clicked();
+    void on_BTN_ERROR_CLEAR_HOT_2_clicked();
+
+    void on_BTN_ERROR_CLEAR_SODA_2_clicked();
 
 
 

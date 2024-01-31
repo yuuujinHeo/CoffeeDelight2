@@ -117,11 +117,31 @@ typedef struct{
     QString menu_id;
     QString menu_name;
 
+    int id_module;
     int id_cell;
 }ST_COMPLETED_DRINK_INFO;
 
 
+typedef struct{
+    int id_module;
+    int id_cell;
+}ST_OUTLET_CELL_INFO;
 
+
+extern int LOADCELL_SCALE_HOT_1;
+extern int LOADCELL_SCALE_HOT_2;
+extern int LOADCELL_SCALE_SYRUP;
+extern int LOADCELL_SCALE_SODA;
+extern int LOADCELL_SCALE_ICECREAM_1;
+extern int LOADCELL_SCALE_ICECREAM_2;
+extern int LOADCELL_SCALE_MILK_1;
+extern int LOADCELL_SCALE_MILK_2;
+extern int LOADCELL_SCALE_MILK_3;
+extern int LOADCELL_SCALE_MILK_4;
+extern int LOADCELL_INITIAL_MILK_1;
+extern int LOADCELL_INITIAL_MILK_2;
+extern int LOADCELL_INITIAL_MILK_3;
+extern int LOADCELL_INITIAL_MILK_4;
 // ==========================================================
 
 
@@ -208,7 +228,12 @@ typedef struct{
 extern ICE_DISPENSER_INFO   ICE_DATA[2];
 
 
-
+typedef struct{
+    short value;
+    short calib_param;
+    int raw;
+    unsigned char error;
+}ST_LOADCELL_DATA;
 
 typedef struct{
     unsigned char       connection_status;

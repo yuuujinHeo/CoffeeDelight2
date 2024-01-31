@@ -114,10 +114,120 @@ QLineEdit{
         <x>60</x>
         <y>40</y>
         <width>251</width>
-        <height>336</height>
+        <height>370</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_COFFEE">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_151">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>제빙기2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_156">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>온수기1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_ICE_2">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_ICE_1">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_HOT_1">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PET_CUP_2">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_HOT_1">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
        <item row="6" column="0">
         <widget class="QLabel" name="label_155">
          <property name="font">
@@ -137,8 +247,171 @@ QLineEdit{
          </property>
         </widget>
        </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_SODA_1">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PAPER_CUP_1">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_152">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>종이컵2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_154">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>PET컵1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PET_CUP_1">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_HOT_2">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_HOT_2">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_153">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>종이컵1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_158">
+         <property name="font">
+          <font>
+           <family>함초롬돋움</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>온수기2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="2">
         <widget class="QPushButton" name="BTN_ERROR_CLEAR_PAPER_CUP_2">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_SODA_1">
          <property name="text">
           <string>에러 클리어</string>
          </property>
@@ -166,8 +439,15 @@ QLineEdit{
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_154">
+       <item row="3" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PAPER_CUP_1">
+         <property name="text">
+          <string>에러 클리어</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_149">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -178,22 +458,15 @@ QLineEdit{
           </font>
          </property>
          <property name="text">
-          <string>PET컵1</string>
+          <string>커피머신</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_SODA">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PAPER_CUP_1">
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_157">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -204,18 +477,15 @@ QLineEdit{
           </font>
          </property>
          <property name="text">
-          <string/>
+          <string>탄산수1</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_ICE_1">
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PAPER_CUP_2">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -255,22 +525,15 @@ QLineEdit{
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_ICE_1">
+       <item row="6" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PET_CUP_2">
          <property name="text">
           <string>에러 클리어</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_HOT_WATER">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_HOT_WATER">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_ICE_1">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -291,34 +554,8 @@ QLineEdit{
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_COFFEE">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_152">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>종이컵2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PET_CUP_2">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_ICE_2">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -361,22 +598,8 @@ QLineEdit{
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PAPER_CUP_1">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_ICE_2">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_153">
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_159">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -387,34 +610,15 @@ QLineEdit{
           </font>
          </property>
          <property name="text">
-          <string>종이컵1</string>
+          <string>탄산수2</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_157">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>탄산수</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_SODA">
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="LE_DEVICE_ERROR_SODA_2">
          <property name="font">
           <font>
            <family>함초롬돋움</family>
@@ -435,118 +639,10 @@ QLineEdit{
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_151">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>제빙기2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PET_CUP_2">
+       <item row="10" column="2">
+        <widget class="QPushButton" name="BTN_ERROR_CLEAR_SODA_2">
          <property name="text">
           <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_ICE_2">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_149">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>커피머신</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QPushButton" name="BTN_ERROR_CLEAR_PET_CUP_1">
-         <property name="text">
-          <string>에러 클리어</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_156">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>온수기</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="LE_DEVICE_ERROR_PAPER_CUP_2">
-         <property name="font">
-          <font>
-           <family>함초롬돋움</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -755,94 +851,6 @@ QGroupBox::title  {
        </property>
        <property name="text">
         <string>Outlet Connection Error</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_212">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>180</y>
-         <width>251</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>함초롬돋움</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Outlet Control Error</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LE_SUPER_STOP_OUTLET_CONTROL">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>180</y>
-         <width>21</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>함초롬돋움</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_213">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>210</y>
-         <width>251</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>함초롬돋움</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Outlet Sensor Error</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="LE_SUPER_STOP_OUTLET_SENSOR">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>210</y>
-         <width>21</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>함초롬돋움</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="label_214">

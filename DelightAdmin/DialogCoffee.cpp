@@ -149,6 +149,8 @@ void DialogCoffee::onTimer(){
         ui->LE_MILK_REPLACE_TIME_SECOND->setText(QString().sprintf("%d", sec));
     }
 
+    if(timeout_after_clean != 0)
+        timeout_after_clean--;
 
 }
 
@@ -388,14 +390,17 @@ void DialogCoffee::onSendMsg(){
             }else if(Machine.dueTimeMilkClean == 0){
                 cleaning_state = CLEANING_AUTO_START;
                 status = MACHINE_MILK_CLEANING;
-            }else if(Machine.dueTimeMilkReplace == 0){//check need
+            }else if(Machine.dueTimeMilkReplace < 40 && Machine.dueTimeMilkReplace > -1){//check need
                 if(cleaning_state == CLEANING_NONE || cleaning_state == CLEANING_DONE){
                     cleaning_state = CLEANING_AUTO_START;
+                    plog->write("[COFFEE] COFFEE RINSE !!!!!!!!!!!!"+QString::number(Machine.dueTimeMilkReplace));
                     status = MACHINE_MILK_REPLACEMENT;
                 }
             }else{
                 if(cleaning_state == CLEANING_AUTO_START){
+                    plog->write("[COFFEE] COFFEE RINSE DONE !!!!!!!!!!!!"+QString::number(status));
                     cleaning_state = CLEANING_DONE;
+                    timeout_after_clean = 60000/200;
                     status = MACHINE_READY;
                 }
             }

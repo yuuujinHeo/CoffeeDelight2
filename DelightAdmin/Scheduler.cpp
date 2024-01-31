@@ -275,7 +275,7 @@ void Scheduler::onTimer(){
                 action_state = ACTION_STATE_CUP_READY;
             }else if(next_type.left(3) == "ICE"){
                 action_state = ACTION_STATE_ICE_READY;
-            }else if(next_type == "HOT_WATER" || next_type == "SODA"){
+            }else if(next_type.left(3) == "HOT" || next_type.left(4) == "SODA"){
                 action_state = ACTION_STATE_HOT_READY;
             }else if(next_type == "COFFEE"){
                 action_state = ACTION_STATE_COFFEE_READY;
@@ -533,36 +533,7 @@ void Scheduler::onTimer(){
         plog->add_takttime("START ICE",prevTime.msecsTo(QDateTime::currentDateTime()));
         prevTime = QDateTime::currentDateTime();
 
-        // ice device selsection
-//        if(current_recipe_step.ingredient == "ICE_1"){
-//            if(ice->IsIceDev_1_Available() == true){
-//                ice_dev_selection = 1;
-//            }else{
-//                if(ice->IsIceDev_2_Available() == true){
-//                    ice_dev_selection = 2;
-//                }else{
-//                    // no ice device available;
-//                    // fatal error
-//                    qDebug() << "no ice device available";
-//                    break;
-//                }
-//            }
-//        }else if(current_recipe_step.ingredient == "ICE_2"){
-//            if(ice->IsIceDev_2_Available() == true){
-//                ice_dev_selection = 2;
-//            }else{
-//                if(ice->IsIceDev_1_Available() == true){
-//                    ice_dev_selection = 1;
-//                }else{
-//                    // no ice device available;
-//                    // fatal error
-//                    qDebug() << "no ice device available";
-//                    break;
-//                }
-//            }
-//        }
-
-        if(ice_toggle%2 == 0){
+        if(ice_toggle < stock->ice_rotate_1){
             if(ice->IsIceDev_1_Available() == true){
                 ice_dev_selection = 1;
             }else{
@@ -590,6 +561,9 @@ void Scheduler::onTimer(){
             }
         }
         ice_toggle++;
+        if(ice_toggle > stock->ice_rotate_1 + stock->ice_rotate_2 - 1)
+            ice_toggle = 0;
+
 
         if(ice_dev_selection == 1){
             keymotion = "READY_ICE_1";
@@ -762,15 +736,15 @@ void Scheduler::onTimer(){
 
         int time_ms = int(current_recipe_step.amount.toFloat()*1000.0);
         if(hot_dev_selection == 1){
-            if(current_recipe_step.ingredient == "HOT_WATER"){
+            if(current_recipe_step.ingredient.left(3) == "HOT"){
                 hot->DispenseHotByTime(0, time_ms);
-            }else if(current_recipe_step.ingredient == "SODA"){
+            }else if(current_recipe_step.ingredient.left(4) == "SODA"){
                 hot->DispenseSodaByTime(0, time_ms);
             }
         }else if(hot_dev_selection == 2){
-            if(current_recipe_step.ingredient == "HOT_WATER"){
+            if(current_recipe_step.ingredient.left(3) == "HOT"){
                 hot->DispenseHotByTime(1, time_ms);
-            }else if(current_recipe_step.ingredient == "SODA"){
+            }else if(current_recipe_step.ingredient.left(4) == "SODA"){
                 hot->DispenseSodaByTime(1, time_ms);
             }
         }
