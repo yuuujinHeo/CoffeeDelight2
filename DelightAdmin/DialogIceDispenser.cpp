@@ -27,14 +27,14 @@ DialogIceDispenser::DialogIceDispenser(QWidget *parent, DialogStock *_stock) :
     connect(m_serialPort2,SIGNAL(readyRead()), this, SLOT(readData2()));
     connect(m_serialPort2,SIGNAL(errorOccurred(QSerialPort::SerialPortError)), this, SLOT(handleError2(QSerialPort::SerialPortError)));
 
-    m_serialPort1->setPortName("/dev/ttyS2");
+    m_serialPort1->setPortName("/dev/ttyS3");
     m_serialPort1->setBaudRate(QSerialPort::Baud9600);
     m_serialPort1->setDataBits(QSerialPort::Data8);
     m_serialPort1->setParity(QSerialPort::NoParity);
     m_serialPort1->setStopBits(QSerialPort::OneStop);
     m_serialPort1->setFlowControl(QSerialPort::NoFlowControl);
 
-    m_serialPort2->setPortName("/dev/ttyS3");
+    m_serialPort2->setPortName("/dev/ttyS2");
     m_serialPort2->setBaudRate(QSerialPort::Baud9600);
     m_serialPort2->setDataBits(QSerialPort::Data8);
     m_serialPort2->setParity(QSerialPort::NoParity);

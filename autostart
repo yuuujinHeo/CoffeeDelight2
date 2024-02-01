@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd ~/Desktop/CoffeeDelight_new/DelightAdmin/build
-
-./DelightAdmin
-
-exit 0

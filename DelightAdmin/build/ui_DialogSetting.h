@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'DialogSetting.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.3
+** Created by: Qt User Interface Compiler version 5.12.8
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -463,53 +463,53 @@ public:
 
     void retranslateUi(QDialog *DialogSetting)
     {
-        DialogSetting->setWindowTitle(QCoreApplication::translate("DialogSetting", "Dialog", nullptr));
-        GB_SETTING->setTitle(QCoreApplication::translate("DialogSetting", "\354\204\244\354\240\225", nullptr));
-        label_148->setText(QCoreApplication::translate("DialogSetting", "\354\236\245\353\271\204 \354\227\220\353\237\254", nullptr));
-        BTN_ERROR_CLEAR_COFFEE->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        label_151->setText(QCoreApplication::translate("DialogSetting", "\354\240\234\353\271\231\352\270\2602", nullptr));
-        label_156->setText(QCoreApplication::translate("DialogSetting", "\354\230\250\354\210\230\352\270\2601", nullptr));
-        BTN_ERROR_CLEAR_ICE_2->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        BTN_ERROR_CLEAR_ICE_1->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        BTN_ERROR_CLEAR_HOT_1->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        DialogSetting->setWindowTitle(QApplication::translate("DialogSetting", "Dialog", nullptr));
+        GB_SETTING->setTitle(QApplication::translate("DialogSetting", "\354\204\244\354\240\225", nullptr));
+        label_148->setText(QApplication::translate("DialogSetting", "\354\236\245\353\271\204 \354\227\220\353\237\254", nullptr));
+        BTN_ERROR_CLEAR_COFFEE->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        label_151->setText(QApplication::translate("DialogSetting", "\354\240\234\353\271\231\352\270\2602", nullptr));
+        label_156->setText(QApplication::translate("DialogSetting", "\354\230\250\354\210\230\352\270\2601", nullptr));
+        BTN_ERROR_CLEAR_ICE_2->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        BTN_ERROR_CLEAR_ICE_1->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        BTN_ERROR_CLEAR_HOT_1->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
         LE_DEVICE_ERROR_PET_CUP_2->setText(QString());
         LE_DEVICE_ERROR_HOT_1->setText(QString());
-        label_155->setText(QCoreApplication::translate("DialogSetting", "PET\354\273\2652", nullptr));
+        label_155->setText(QApplication::translate("DialogSetting", "PET\354\273\2652", nullptr));
         LE_DEVICE_ERROR_SODA_1->setText(QString());
         LE_DEVICE_ERROR_PAPER_CUP_1->setText(QString());
-        label_152->setText(QCoreApplication::translate("DialogSetting", "\354\242\205\354\235\264\354\273\2652", nullptr));
-        label_154->setText(QCoreApplication::translate("DialogSetting", "PET\354\273\2651", nullptr));
-        BTN_ERROR_CLEAR_PET_CUP_1->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        BTN_ERROR_CLEAR_HOT_2->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        label_152->setText(QApplication::translate("DialogSetting", "\354\242\205\354\235\264\354\273\2652", nullptr));
+        label_154->setText(QApplication::translate("DialogSetting", "PET\354\273\2651", nullptr));
+        BTN_ERROR_CLEAR_PET_CUP_1->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        BTN_ERROR_CLEAR_HOT_2->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
         LE_DEVICE_ERROR_HOT_2->setText(QString());
-        label_153->setText(QCoreApplication::translate("DialogSetting", "\354\242\205\354\235\264\354\273\2651", nullptr));
-        label_158->setText(QCoreApplication::translate("DialogSetting", "\354\230\250\354\210\230\352\270\2602", nullptr));
-        BTN_ERROR_CLEAR_PAPER_CUP_2->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        BTN_ERROR_CLEAR_SODA_1->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        label_153->setText(QApplication::translate("DialogSetting", "\354\242\205\354\235\264\354\273\2651", nullptr));
+        label_158->setText(QApplication::translate("DialogSetting", "\354\230\250\354\210\230\352\270\2602", nullptr));
+        BTN_ERROR_CLEAR_PAPER_CUP_2->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        BTN_ERROR_CLEAR_SODA_1->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
         LE_DEVICE_ERROR_COFFEE->setText(QString());
-        BTN_ERROR_CLEAR_PAPER_CUP_1->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        label_149->setText(QCoreApplication::translate("DialogSetting", "\354\273\244\355\224\274\353\250\270\354\213\240", nullptr));
-        label_157->setText(QCoreApplication::translate("DialogSetting", "\355\203\204\354\202\260\354\210\2301", nullptr));
+        BTN_ERROR_CLEAR_PAPER_CUP_1->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        label_149->setText(QApplication::translate("DialogSetting", "\354\273\244\355\224\274\353\250\270\354\213\240", nullptr));
+        label_157->setText(QApplication::translate("DialogSetting", "\355\203\204\354\202\260\354\210\2301", nullptr));
         LE_DEVICE_ERROR_PAPER_CUP_2->setText(QString());
-        label_150->setText(QCoreApplication::translate("DialogSetting", "\354\240\234\353\271\231\352\270\2601", nullptr));
-        BTN_ERROR_CLEAR_PET_CUP_2->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        label_150->setText(QApplication::translate("DialogSetting", "\354\240\234\353\271\231\352\270\2601", nullptr));
+        BTN_ERROR_CLEAR_PET_CUP_2->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
         LE_DEVICE_ERROR_ICE_1->setText(QString());
         LE_DEVICE_ERROR_ICE_2->setText(QString());
         LE_DEVICE_ERROR_PET_CUP_1->setText(QString());
-        label_159->setText(QCoreApplication::translate("DialogSetting", "\355\203\204\354\202\260\354\210\2302", nullptr));
+        label_159->setText(QApplication::translate("DialogSetting", "\355\203\204\354\202\260\354\210\2302", nullptr));
         LE_DEVICE_ERROR_SODA_2->setText(QString());
-        BTN_ERROR_CLEAR_SODA_2->setText(QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
-        GB_SUPER_STOP->setTitle(QCoreApplication::translate("DialogSetting", "SUPER STOP", nullptr));
-        label_203->setText(QCoreApplication::translate("DialogSetting", "Board Connection Error (LAN2CAN)", nullptr));
-        label_209->setText(QCoreApplication::translate("DialogSetting", "Robot Data Error", nullptr));
-        label_210->setText(QCoreApplication::translate("DialogSetting", "Robot Miss Command Check Error", nullptr));
-        label_211->setText(QCoreApplication::translate("DialogSetting", "Outlet Connection Error", nullptr));
-        label_214->setText(QCoreApplication::translate("DialogSetting", "Platform Open Error", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("DialogSetting", "\354\227\220\353\237\254", nullptr));
-        BTN_TEST_ORDER->setText(QCoreApplication::translate("DialogSetting", "\355\205\214\354\212\244\355\212\270 \354\243\274\353\254\270", nullptr));
-        BTN_DB_RELOAD->setText(QCoreApplication::translate("DialogSetting", "DB reload", nullptr));
-        CB_ADD_SHOT->setText(QCoreApplication::translate("DialogSetting", "add Shot", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("DialogSetting", "\355\205\214\354\212\244\355\212\270", nullptr));
+        BTN_ERROR_CLEAR_SODA_2->setText(QApplication::translate("DialogSetting", "\354\227\220\353\237\254 \355\201\264\353\246\254\354\226\264", nullptr));
+        GB_SUPER_STOP->setTitle(QApplication::translate("DialogSetting", "SUPER STOP", nullptr));
+        label_203->setText(QApplication::translate("DialogSetting", "Board Connection Error (LAN2CAN)", nullptr));
+        label_209->setText(QApplication::translate("DialogSetting", "Robot Data Error", nullptr));
+        label_210->setText(QApplication::translate("DialogSetting", "Robot Miss Command Check Error", nullptr));
+        label_211->setText(QApplication::translate("DialogSetting", "Outlet Connection Error", nullptr));
+        label_214->setText(QApplication::translate("DialogSetting", "Platform Open Error", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("DialogSetting", "\354\227\220\353\237\254", nullptr));
+        BTN_TEST_ORDER->setText(QApplication::translate("DialogSetting", "\355\205\214\354\212\244\355\212\270 \354\243\274\353\254\270", nullptr));
+        BTN_DB_RELOAD->setText(QApplication::translate("DialogSetting", "DB reload", nullptr));
+        CB_ADD_SHOT->setText(QApplication::translate("DialogSetting", "add Shot", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("DialogSetting", "\355\205\214\354\212\244\355\212\270", nullptr));
     } // retranslateUi
 
 };

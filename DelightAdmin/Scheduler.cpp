@@ -697,11 +697,7 @@ void Scheduler::onTimer(){
         }
         hot_toggle++;
 
-        if(hot_dev_selection == 1){
-            keymotion = "READY_HOT_1";
-        }else if(hot_dev_selection == 2){
-            keymotion = "READY_HOT_2";
-        }
+        keymotion = "READY_HOT";
         robot->RobotMoving = true;
         robot->MotionServerCommand(keymotion);
 
@@ -1109,16 +1105,7 @@ void Scheduler::onTimer(){
         if(robot->RobotMoving == true)
             break;
 
-        if(outlet_cell_info == 0)
-            keymotion = "READY_OUTLET_1";
-        else if(outlet_cell_info == 1)
-            keymotion = "READY_OUTLET_2";
-        else if(outlet_cell_info == 2)
-            keymotion = "READY_OUTLET_3";
-        else if(outlet_cell_info == 3)
-            keymotion = "READY_OUTLET_4";
-        else if(outlet_cell_info == 4)
-            keymotion = "READY_OUTLET_5";
+        keymotion = "READY_OUTLET";
 
         robot->RobotMoving = true;
         robot->MotionServerCommand(keymotion);

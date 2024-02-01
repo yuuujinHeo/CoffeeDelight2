@@ -337,7 +337,7 @@ void MainWindow::CoreLogic_Initializing()
 
         int outlet_init_done = true;
         for(int i=0; i<NUMBER_OF_OUTLET; i++){
-            if(outlet->OUTLET_DISABLE[i] == 0 && outlet->is_ready[i] == 1){
+            if(outlet->OUTLET_DISABLE[i] == 0 && outlet->is_ready[i] == 0){
                 outlet_init_done = false;
                 break;
             }
@@ -867,7 +867,7 @@ void MainWindow::Update_Dev_IceInfo(){
 void MainWindow::Update_Dev_CoffeeInfo(){
     if(coffee->getCurrentStatus() == MACHINE_NOT_CONNECTED){
         SetBTNColor(ui->BTN_DEV_INFO_COFFEE, COLOR_WEAKBAD);
-        stock->SetDeviceError("COFFEE");
+//        stock->SetDeviceError("COFFEE");
     }else{
         SetBTNColor(ui->BTN_DEV_INFO_COFFEE, COLOR_GOOD);
     }
@@ -1466,6 +1466,18 @@ void MainWindow::ClearForcedSuperError(){
     SUPER_FATAL_ERROR_PLATFORM_OPEN = 0;
 
     PLATFORM_OPENED_WHEN_OPERATING_FLAG = 0;
+
+    stock->ClearDeviceError("COFFEE");
+    stock->ClearDeviceError("ICE_1");
+    stock->ClearDeviceError("ICE_2");
+    stock->ClearDeviceError("PAPER_CUP_1");
+    stock->ClearDeviceError("PAPER_CUP_2");
+    stock->ClearDeviceError("PAPER_CUP_1");
+    stock->ClearDeviceError("PAPER_CUP_2");
+    stock->ClearDeviceError("HOT_1");
+    stock->ClearDeviceError("HOT_2");
+    stock->ClearDeviceError("SODA_1");
+    stock->ClearDeviceError("SODA_2");
 }
 
 int MainWindow::CheckDeviceConnection(){

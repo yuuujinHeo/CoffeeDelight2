@@ -93,16 +93,39 @@ void DialogBarcode::onTimer(){
     }
 
     if(readCount == 0){
-        if(datas[0] == 'a' && datas[datas.size()-1] == 'z'){
-            for(int i=0; i<datas.size()-2; i++){
-                BARCODE_DATA[0].barcode_data[i] = datas[i+1];
+        if(datas[0] == 'a'){
+            QByteArray temp;
+            for(int i=1; i<datas.size(); i++){
+                if(datas[i] == 'z'){
+                    for(int i=0; i<MAX_BARCODE_LENGTH; i++){
+                        if(i<temp.size()){
+                            BARCODE_DATA[0].barcode_data[i] = temp[i];
+                        }else{
+                            BARCODE_DATA[0].barcode_data[i] = 0;
+                        }
+                    }
+                    datas.clear();
+                    NewInputNotification = true;
+                    BARCODE_DATA[0].barcode_count++;
+                    NewBarcodePin = QString().sprintf("%s", BARCODE_DATA[0].barcode_data);
+                    plog->write("[BARCODE] NEW BARCODE READ : "+NewBarcodePin);
+
+                    break;
+                }else{
+                    temp.append(datas[i]);
+                }
             }
-            datas.clear();
-            NewInputNotification = true;
-            BARCODE_DATA[0].barcode_count++;
-            NewBarcodePin = QString().sprintf("%s", BARCODE_DATA[0].barcode_data);
-            plog->write("[BARCODE] NEW BARCODE READ : "+NewBarcodePin);
         }
+//        if(datas[0] == 'a' && datas[datas.size()-1] == 'z'){
+//            for(int i=0; i<datas.size()-2; i++){
+//                BARCODE_DATA[0].barcode_data[i] = datas[i+1];
+//            }
+//            datas.clear();
+//            NewInputNotification = true;
+//            BARCODE_DATA[0].barcode_count++;
+//            NewBarcodePin = QString().sprintf("%s", BARCODE_DATA[0].barcode_data);
+//            plog->write("[BARCODE] NEW BARCODE READ : "+NewBarcodePin);
+//        }
     }else if(readCount > 3 && datas.size() > 0){
         plog->write("[BARCODE] UNKNOWN BARCODE READ : "+datas);
         datas.clear();

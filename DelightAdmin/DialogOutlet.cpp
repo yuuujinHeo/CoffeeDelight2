@@ -270,7 +270,7 @@ void DialogOutlet::onTimer(){
 
 
 void DialogOutlet::InitOutletHandler(){
-    static unsigned int try_num[NUMBER_OF_OUTLET] = {0,};
+    static int try_num[NUMBER_OF_OUTLET] = {0,};
 
     for(int i=0; i<NUMBER_OF_OUTLET; i++){
         if(OUTLET_DISABLE[i] == 1){
@@ -292,8 +292,7 @@ void DialogOutlet::InitOutletHandler(){
         case OUTLET_INIT_CHECK_DOOR_SHUT:
             if(try_num[i]-- > 0)
                 break;
-            plog->write("[OUTLET] INIT PROCESS : CHECK DOOR SHUT");
-
+//            plog->write("[OUTLET] INIT PROCESS : CHECK DOOR SHUT");
             if(IsDoorLocked(i) == true && IsDoorClosed(i) == true){
                 init_state[i] = OUTLET_INIT_CHECK_DRINK_EXIST;
             }
@@ -303,8 +302,8 @@ void DialogOutlet::InitOutletHandler(){
             plog->write("[OUTLET] INIT PROCESS : CHECK DRINK EXIST");
             if(IsDrinkExist(i) == true){
                 SetCellOccupancy(i, CELL_OCC, "???");
-                init_state[i] = OUTLET_INIT_DONE;
             }
+            init_state[i] = OUTLET_INIT_DONE;
             break;
 
         case OUTLET_INIT_DONE:
